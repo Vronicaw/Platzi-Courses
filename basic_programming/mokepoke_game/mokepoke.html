@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>MokePoke</title>
+    <script src="js/mokepoke.js"></script>
+  </head>
+  <body>
+    <h1>MOKEPOKE! 🔥💧⛰️</h1>
+
+    <section id="choose-warrior">
+      <h2>Choose your warrior</h2>
+      <label for="cadom">Cadom</label>
+      <input type="radio" name="warriors" id="cadom" />
+      <label for="gentor">Gentor</label>
+      <input type="radio" name="warriors" id="gentor" />
+      <label for="haggis">Haggis</label>
+      <input type="radio" name="warriors" id="haggis" />
+
+      <!-- Cadom -> Fire
+      Gentor -> Earth
+      Haggis -> Water
+      Pancer -> Earth and water
+      Solrec -> Earth and fire 
+      Vergo -> water and fire-->
+
+      <button id="button-warrior">Select</button>
+    </section>
+
+    <section id="choose-attack">
+      <h2>Choose your attack</h2>
+      <p>Your warrior <span id="warrior-player"></span> has <span>3</span> lives</p>
+      <p>Your enemy's warrior <span id="warrior-enemy"></span> has <span>3</span> lives</p>
+      <p>
+        <button id="button-fire">Fire 🔥</button>
+        <button id="button-water">Water 💧</button>
+        <button id="button-earth">Earth ⛰️</button>
+      </p>
+    </section>
+
+    <section id="announcement">
+      <p>Your warrior attacked with FIRE, your enemy's warrior attacked with EARTH - YOU WON! 🎊</p>
+    </section>
+
+    <section id="reiniciar">
+      <button>Restart</button>
+    </section>
+
+  </body>
+</html>
