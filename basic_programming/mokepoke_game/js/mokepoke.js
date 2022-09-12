@@ -1,4 +1,6 @@
 let playerAttack
+let enemyAttack
+let result
 
 function startGame() {
   let buttonWarrior = document.getElementById("button-warrior")
@@ -32,14 +34,14 @@ function selectWarrior() {
   randomEnemyWarrior()
 }
 
-//SELECCIÓN ALEATORIA GUERRERO DEL PC
+//SELECCIÓN ALEATORIA GUERRERO DEL PC Y ATAQUES
 function randomEnemyWarrior() {
-  let randomAttack = aleatorio(1,3)
+  let randomEnemy = aleatorio(1,3)
   let spanWarriorEnemy = document.getElementById("warrior-enemy")
 
-  if (randomAttack == 1) {
+  if (randomEnemy == 1) {
     spanWarriorEnemy.innerHTML = "Cadom"
-  } else if (randomAttack == 2) {
+  } else if (randomEnemy == 2) {
     spanWarriorEnemy.innerHTML = "Gentor"
   } else {
     spanWarriorEnemy.innerHTML = "Haggis"
@@ -48,15 +50,52 @@ function randomEnemyWarrior() {
 
 function fireAttack() {
   playerAttack = "FIRE"
-  alert(playerAttack)
+  randomEnemyAttack()
 }
 function waterAttack() {
   playerAttack = "WATER"
-  alert(playerAttack)
+  randomEnemyAttack()
 }
 function earthAttack() {
   playerAttack = "EARTH"
-  alert(playerAttack)
+  randomEnemyAttack()
+}
+
+function randomEnemyAttack() {
+  let randomAttack = aleatorio(1,3)
+
+  if (randomAttack == 1) {
+    enemyAttack = "FIRE"
+  } else if (randomAttack == 2) {
+    enemyAttack = "WATER"
+  } else {
+    enemyAttack = "EARTH"
+  }
+
+  combat()
+}
+
+function combat() {
+  if(playerAttack == enemyAttack) {
+    createMessage("TIE")
+  } else if(playerAttack == "FIRE" && enemyAttack == "EARTH") {
+    createMessage("YOU WON")
+  } else if(playerAttack == "WATER" && enemyAttack == "FIRE") {
+    createMessage("YOU WON")
+  } else if(playerAttack == "EARTH" && enemyAttack == "WATER") {
+    createMessage("YOU WON")
+  } else {
+    createMessage("YOU LOSE")
+  }
+}
+
+function createMessage(result) {
+  let sectionMessages = document.getElementById("messages")
+
+  let paragraph = document.createElement("p")
+  paragraph.innerHTML = "Your warrior attacked with " + playerAttack + ". Your enemy's warrior attacked with " + enemyAttack + " - " + result
+
+  sectionMessages.appendChild(paragraph)
 }
 
 function aleatorio(min, max) {
