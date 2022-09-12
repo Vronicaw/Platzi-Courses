@@ -1,6 +1,9 @@
 let playerAttack
 let enemyAttack
 let result
+let playerLives = 3
+let enemyLives = 3
+let finalResult
 
 function startGame() {
   let buttonWarrior = document.getElementById("button-warrior")
@@ -76,16 +79,38 @@ function randomEnemyAttack() {
 }
 
 function combat() {
+  let spanPlayerLives = document.getElementById("player-lives")
+  let spanEnemyLives = document.getElementById("enemy-lives")
+
   if(playerAttack == enemyAttack) {
     createMessage("TIE")
   } else if(playerAttack == "FIRE" && enemyAttack == "EARTH") {
     createMessage("YOU WON")
+    enemyLives--
+    spanEnemyLives.innerHTML = enemyLives
   } else if(playerAttack == "WATER" && enemyAttack == "FIRE") {
     createMessage("YOU WON")
+    enemyLives--
+    spanEnemyLives.innerHTML = enemyLives
   } else if(playerAttack == "EARTH" && enemyAttack == "WATER") {
     createMessage("YOU WON")
+    enemyLives--
+    spanEnemyLives.innerHTML = enemyLives
   } else {
     createMessage("YOU LOSE")
+    playerLives--
+    spanPlayerLives.innerHTML = playerLives
+  }
+
+  checkLives()
+}
+
+// Revisar las vidas que tiene cada jugador
+function checkLives() {
+  if (enemyLives == 0) {
+    createFinalMessage("CONGRATS, YOU WON! 🎊")
+  } else if (playerLives == 0) {
+    createFinalMessage("I'M SORRY, YOU LOSE 😔")
   }
 }
 
@@ -94,6 +119,15 @@ function createMessage(result) {
 
   let paragraph = document.createElement("p")
   paragraph.innerHTML = "Your warrior attacked with " + playerAttack + ". Your enemy's warrior attacked with " + enemyAttack + " - " + result
+
+  sectionMessages.appendChild(paragraph)
+}
+
+function createFinalMessage(finalResult) {
+  let sectionMessages = document.getElementById("messages")
+
+  let paragraph = document.createElement("p")
+  paragraph.innerHTML = finalResult
 
   sectionMessages.appendChild(paragraph)
 }
