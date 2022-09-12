@@ -6,6 +6,13 @@ let enemyLives = 3
 let finalResult
 
 function startGame() {
+  //Elementos de HTML ocultos al inicio del juego
+  let sectionChooseAttack = document.getElementById("choose-attack")
+  sectionChooseAttack.style.display = "none"
+  let sectionRestartGame = document.getElementById("restart")
+  sectionRestartGame.style.display = "none"
+
+  //Elementos que se cargan al iniciar el juego
   let buttonWarrior = document.getElementById("button-warrior")
   buttonWarrior.addEventListener("click", selectWarrior)
 
@@ -17,11 +24,17 @@ function startGame() {
   buttonEarth.addEventListener("click", earthAttack)
 
   let buttonRestart = document.getElementById("restart-button")
-  buttonRestart.addEventListener("Click", restartGame)
+  buttonRestart.addEventListener("click", restartGame)
 }
 
 // SELECCIÓN DEL GUERRERO DEL JUGADOR
 function selectWarrior() {
+  // Elementos HTML que se ocultan o muestran
+  let sectionChooseAttack = document.getElementById("choose-attack")
+  sectionChooseAttack.style.display = "block"
+  let sectionChooseWarrior = document.getElementById("choose-warrior")
+  sectionChooseWarrior.style.display = "none"
+
   let inputCadom = document.getElementById("cadom")
   let inputGentor = document.getElementById("gentor")
   let inputHaggis = document.getElementById("haggis")
@@ -130,15 +143,31 @@ function createMessage(result) {
 }
 
 function createFinalMessage(finalResult) {
+  // Elementos HTML que se ocultan o muestran
+  let sectionRestartGame = document.getElementById("restart")
+  sectionRestartGame.style.display = "block"
+  
   let sectionMessages = document.getElementById("messages")
 
   let paragraph = document.createElement("p")
   paragraph.innerHTML = finalResult
 
   sectionMessages.appendChild(paragraph)
+
+  // DESHABILITAR BOTONES
+  let buttonFire = document.getElementById("button-fire")
+  buttonFire.disabled = true
+  let buttonWater = document.getElementById("button-water")
+  buttonWater.disabled = true
+  let buttonEarth = document.getElementById("button-earth")
+  buttonEarth.disabled = true
 }
 
 // REINICIAR EL JUEGO
+function restartGame() {
+  location.reload()
+}
+
 
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
