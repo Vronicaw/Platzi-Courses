@@ -7,14 +7,17 @@ let finalResult
 
 function startGame() {
   let buttonWarrior = document.getElementById("button-warrior")
-buttonWarrior.addEventListener("click", selectWarrior)
+  buttonWarrior.addEventListener("click", selectWarrior)
 
-let buttonFire = document.getElementById("button-fire")
-buttonFire.addEventListener("click", fireAttack)
-let buttonWater = document.getElementById("button-water")
-buttonWater.addEventListener("click", waterAttack)
-let buttonEarth = document.getElementById("button-earth")
-buttonEarth.addEventListener("click", earthAttack)
+  let buttonFire = document.getElementById("button-fire")
+  buttonFire.addEventListener("click", fireAttack)
+  let buttonWater = document.getElementById("button-water")
+  buttonWater.addEventListener("click", waterAttack)
+  let buttonEarth = document.getElementById("button-earth")
+  buttonEarth.addEventListener("click", earthAttack)
+
+  let buttonRestart = document.getElementById("restart-button")
+  buttonRestart.addEventListener("Click", restartGame)
 }
 
 // SELECCIÓN DEL GUERRERO DEL JUGADOR
@@ -37,7 +40,7 @@ function selectWarrior() {
   randomEnemyWarrior()
 }
 
-//SELECCIÓN ALEATORIA GUERRERO DEL PC Y ATAQUES
+// SELECCIÓN ALEATORIA GUERRERO DEL PC
 function randomEnemyWarrior() {
   let randomEnemy = aleatorio(1,3)
   let spanWarriorEnemy = document.getElementById("warrior-enemy")
@@ -51,6 +54,7 @@ function randomEnemyWarrior() {
   }
 }
 
+// SELECCIÓN DE ATAQE DEL JUGADOR
 function fireAttack() {
   playerAttack = "FIRE"
   randomEnemyAttack()
@@ -64,6 +68,7 @@ function earthAttack() {
   randomEnemyAttack()
 }
 
+// SELECCIÓN ALEATORIA DE ATAQUE DEL PC
 function randomEnemyAttack() {
   let randomAttack = aleatorio(1,3)
 
@@ -78,6 +83,7 @@ function randomEnemyAttack() {
   combat()
 }
 
+// COMBATE
 function combat() {
   let spanPlayerLives = document.getElementById("player-lives")
   let spanEnemyLives = document.getElementById("enemy-lives")
@@ -105,7 +111,7 @@ function combat() {
   checkLives()
 }
 
-// Revisar las vidas que tiene cada jugador
+// REVISIÓN DE LAS VIDAS Y MENSAJES
 function checkLives() {
   if (enemyLives == 0) {
     createFinalMessage("CONGRATS, YOU WON! 🎊")
@@ -131,6 +137,8 @@ function createFinalMessage(finalResult) {
 
   sectionMessages.appendChild(paragraph)
 }
+
+// REINICIAR EL JUEGO
 
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
