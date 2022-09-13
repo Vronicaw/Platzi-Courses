@@ -1,0 +1,28 @@
+.title {
+  color: #5b5f97;
+  width: 250px;
+  height: 65px;
+  background-color: #e3e3e3;
+  text-align: center;
+}
+
+#choose-warrior {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mokepoke-card {
+  background-color: #5b5f97;
+  box-sizing: border-box;
+  border: 1px solid white;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+
+input {
+  display: none;
+}
