@@ -1,11 +1,32 @@
-.title {
-  color: #5b5f97;
-  width: 250px;
-  height: 65px;
-  background-color: #e3e3e3;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+body {
+  background-color: #282b28;
 }
 
+.game {
+  width: 450px;
+  height: 430px;
+  background-color: #F1EFDC;
+  border-radius: 20px;
+  margin: 80px auto;
+}
+
+/* ENCABEZADO */
+.title {
+  font-family: 'Rampart One', cursive;
+  color: #42032C;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 10px auto 5px;
+}
+
+.subtitle {
+  color: #42032C;
+  font-size: 20px;
+}
+
+/* PANEL PARA ESCOGER GUERREROS */
 #choose-warrior {
   display: flex;
   flex-direction: column;
@@ -13,16 +34,45 @@
   align-items: center;
 }
 
+.cards {
+  display: flex;
+  gap: 10px;
+}
+
 .mokepoke-card {
-  background-color: #5b5f97;
   box-sizing: border-box;
-  border: 1px solid white;
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #E6D2AA;
   width: 100px;
-  height: 100px;
+  height: 120px;
   padding: 10px;
+  border-radius: 20px;
+  margin: 5px auto 10px;
+}
+
+p {
+  color: #42032C;
+  margin: 0;
+  text-align: center;
+}
+
+.mokepoke-card img {
+  width: 80px;
 }
 
 input {
   display: none;
+}
+
+/* BOTÓN DE SELECCIONAR*/
+#button-warrior {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 80px;
+  height: 30px;
+  background-color: #D36B00;
+  border: none;
+  border-radius: 20px;
+  margin: 20px;
 }

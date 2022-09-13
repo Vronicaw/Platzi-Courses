@@ -7,47 +7,53 @@
     <link rel="stylesheet" href="Style.css">
   </head>
   <body>
-    <section id="choose-warrior">
-      <h1 class="title">MOKEPOKE<br>🔥💧⛰️</h1>
-      <h2>Choose your warrior</h2>
-      <label for="cadom" class="mokepoke-card">Cadom</label>
-      <input type="radio" name="warriors" id="cadom" />
-      <label for="gentor" class="mokepoke-card">Gentor</label>
-      <input type="radio" name="warriors" id="gentor" />
-      <label for="haggis" class="mokepoke-card">Haggis</label>
-      <input type="radio" name="warriors" id="haggis" />
-
-      <!-- Cadom -> Fire
-      Gentor -> Earth
-      Haggis -> Water
-      Pancer -> Earth and water
-      Solrec -> Earth and fire 
-      Vergo -> water and fire-->
-
-      <button id="button-warrior">Select</button>
-    </section>
-
-    <section id="choose-attack">
-      <h1 class="title">MOKEPOKE! <br>🔥💧⛰️</h1>
-      <h2>Choose your attack</h2>
-
-      <p>Your warrior <span id="warrior-player"></span> has <span id="player-lives">3</span> lives</p>
-      <p>Your enemy's warrior <span id="warrior-enemy"></span> has <span id="enemy-lives">3</span> lives</p>
-
-      <p>
-        <button id="button-fire">Fire 🔥</button>
-        <button id="button-water">Water 💧</button>
-        <button id="button-earth">Earth ⛰️</button>
-      </p>
-    </section>
-
-    <section id="messages">
-      <p></p>
-    </section>
-
-    <section id="restart">
-      <button id="restart-button">Restart</button>
-    </section>
-
+    <div class="game">
+      <section id="choose-warrior">
+        <h1 class="title">💥MOKEPOKE!💥</h1>
+        <h2 class="subtitle">Choose your warrior:</h2>
+  
+        <div class="cards">
+          <label for="cadom" class="mokepoke-card">
+            <p>Cadom</p>
+            <img src="./img/mokepons_mokepon_capipepo_attack.png" alt="Warrior 1">
+          </label>
+          <input type="radio" name="warriors" id="cadom" />
+          <label for="gentor" class="mokepoke-card">
+            <p>Gentor</p>
+            <img src="./img/mokepons_mokepon_hipodoge_attack.png" alt="Warrior 2">
+          </label>
+          <input type="radio" name="warriors" id="gentor" />
+          <label for="haggis" class="mokepoke-card">
+            <p>Haggis</p>
+            <img src="./img/mokepons_mokepon_ratigueya_attack.png" alt="Warrior 3">
+          </label>
+          <input type="radio" name="warriors" id="haggis" />
+        </div>
+  
+        <button id="button-warrior">Select</button>
+      </section>
+  
+      <section id="choose-attack">
+        <h1 class="title">MOKEPOKE! <br>🔥💧⛰️</h1>
+        <h2>Choose your attack</h2>
+  
+        <p>Your warrior <span id="warrior-player"></span> has <span id="player-lives">3</span> lives</p>
+        <p>Your enemy's warrior <span id="warrior-enemy"></span> has <span id="enemy-lives">3</span> lives</p>
+  
+        <p>
+          <button id="button-fire">Fire 🔥</button>
+          <button id="button-water">Water 💧</button>
+          <button id="button-earth">Earth ⛰️</button>
+        </p>
+      </section>
+  
+      <section id="messages">
+        <p></p>
+      </section>
+  
+      <section id="restart">
+        <button id="restart-button">Restart</button>
+      </section>
+    </div>
   </body>
 </html>
