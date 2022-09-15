@@ -23,7 +23,7 @@ body {
 
 .subtitle {
   color: #42032C;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 /* PANEL PARA ESCOGER GUERREROS */
@@ -55,6 +55,14 @@ body {
   margin-top: 10px;
 }
 
+.warrior2 {
+  margin-top: 6px;
+}
+
+.warrior {
+  margin-top: 4px;
+}
+
 p {
   color: #42032C;
   margin: 0;
@@ -79,4 +87,14 @@ input {
   border: none;
   border-radius: 20px;
   margin: 20px;
+}
+
+
+/* PANEL PARA ESCOGER ATAQUES*/
+
+#choose-attack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
