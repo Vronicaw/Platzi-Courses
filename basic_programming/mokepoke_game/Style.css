@@ -44,6 +44,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #E6D2AA;
+  box-shadow: 2px 2px 2px #42032C;
   width: 100px;
   height: 120px;
   padding: 10px;
@@ -85,8 +86,12 @@ input {
   height: 30px;
   background-color: #D36B00;
   border: none;
+  box-shadow: 2px 2px 2px #42032C;
   border-radius: 20px;
   margin: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #42032C;
 }
 
 
