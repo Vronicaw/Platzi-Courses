@@ -31,7 +31,7 @@ function startGame() {
 function selectWarrior() {
   // Elementos HTML que se ocultan o muestran
   let sectionChooseAttack = document.getElementById("choose-attack")
-  sectionChooseAttack.style.display = "block"
+  sectionChooseAttack.style.display = "flex"
   let sectionChooseWarrior = document.getElementById("choose-warrior")
   sectionChooseWarrior.style.display = "none"
 

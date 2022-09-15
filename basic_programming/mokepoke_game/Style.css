@@ -96,10 +96,7 @@ input {
 
 
 /* PANEL PARA ESCOGER ATAQUES*/
-
 #choose-attack {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
