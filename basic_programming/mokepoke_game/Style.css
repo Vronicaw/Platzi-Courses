@@ -51,8 +51,15 @@ body {
   height: 120px;
   padding: 10px;
   border-radius: 20px;
-  margin: 5px auto 10px;
+  margin: 5px 10px 10px;
   font-weight: bold;
+}
+
+.mokepoke-card:hover {
+  background-color: #E7C786;
+}
+.mokepoke-card:active {
+  background-color: #F1EFDC;
 }
 
 .warrior1 {
@@ -97,6 +104,13 @@ input {
   color: #42032C;
 }
 
+#button-warrior:hover {
+  background-color: #E37300;
+}
+
+#button-warrior:active {
+  background-color: #E6D2AA;
+}
 
 /* PANEL PARA ESCOGER ATAQUES*/
 #choose-attack {
@@ -116,6 +130,13 @@ input {
   height: 25px;
   font-size: 13px;
   font-weight: bold;
+}
+
+.attack-buttons:hover {
+  background-color: #E7C786;
+}
+.attack-buttons:active {
+  background-color: #F1EFDC;
 }
 
 #messages {
@@ -141,4 +162,24 @@ input {
   box-shadow: 2px 2px 2px #42032C;
   font-weight: bold;
   margin-top: 12px;
+}
+
+#restart-button:hover {
+  background-color: #E7C786;
+}
+#restart-button:active {
+  background-color: #F1EFDC;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  justify-items: center;
+}
+
+@media (max-width: 360px) {
+  .tarjetas {
+    flex-direction: column;
+  }
+
 }
