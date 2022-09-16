@@ -102,21 +102,21 @@ function combat() {
   let spanEnemyLives = document.getElementById("enemy-lives")
 
   if(playerAttack == enemyAttack) {
-    createMessage("TIE")
+    createMessage("Tie 🧐")
   } else if(playerAttack == "FIRE" && enemyAttack == "EARTH") {
-    createMessage("YOU WON")
+    createMessage("You win! 🎊")
     enemyLives--
     spanEnemyLives.innerHTML = enemyLives
   } else if(playerAttack == "WATER" && enemyAttack == "FIRE") {
-    createMessage("YOU WON")
+    createMessage("You win! 🎊")
     enemyLives--
     spanEnemyLives.innerHTML = enemyLives
   } else if(playerAttack == "EARTH" && enemyAttack == "WATER") {
-    createMessage("YOU WON")
+    createMessage("You win! 🎊")
     enemyLives--
     spanEnemyLives.innerHTML = enemyLives
   } else {
-    createMessage("YOU LOSE")
+    createMessage("You lose 😔")
     playerLives--
     spanPlayerLives.innerHTML = playerLives
   }
@@ -127,19 +127,26 @@ function combat() {
 // REVISIÓN DE LAS VIDAS Y MENSAJES
 function checkLives() {
   if (enemyLives == 0) {
-    createFinalMessage("CONGRATS, YOU WON! 🎊")
+    createFinalMessage("Congrats, you won! 🎊")
   } else if (playerLives == 0) {
-    createFinalMessage("I'M SORRY, YOU LOSE 😔")
+    createFinalMessage("I'm sorry, you lost 😔")
   }
 }
 
-function createMessage(result) {
-  let sectionMessages = document.getElementById("messages")
+function createMessage(resultado) {
+  let sectionMessages = document.getElementById("resultado")
+  let playerNotif = document.getElementById("playerattack")
+  let enemyNotif = document.getElementById("enemyattack")
 
-  let paragraph = document.createElement("p")
-  paragraph.innerHTML = "Your warrior attacked with " + playerAttack + ". Your enemy's warrior attacked with " + enemyAttack + " - " + result
+  let playerNotification = document.createElement("p")
+  let enemyNotification = document.createElement("p")
 
-  sectionMessages.appendChild(paragraph)
+  sectionMessages.innerHTML = resultado
+  playerNotif.innerHTML = playerAttack
+  enemyNotif.innerHTML = enemyAttack
+
+  playerNotif.appendChild(playerNotification)
+  enemyNotif.appendChild(enemyNotification)
 }
 
 function createFinalMessage(finalResult) {
@@ -147,12 +154,9 @@ function createFinalMessage(finalResult) {
   let sectionRestartGame = document.getElementById("restart")
   sectionRestartGame.style.display = "block"
   
-  let sectionMessages = document.getElementById("messages")
+  let sectionMessages = document.getElementById("resultado")
 
-  let paragraph = document.createElement("p")
-  paragraph.innerHTML = finalResult
-
-  sectionMessages.appendChild(paragraph)
+  sectionMessages.innerHTML = finalResult
 
   // DESHABILITAR BOTONES
   let buttonFire = document.getElementById("button-fire")
