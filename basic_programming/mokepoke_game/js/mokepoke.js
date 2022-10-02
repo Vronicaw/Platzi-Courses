@@ -1,44 +1,49 @@
+let sectionChooseAttack = document.getElementById("choose-attack")
+let sectionRestartGame = document.getElementById("restart")
+let buttonWarrior = document.getElementById("button-warrior")
+let buttonFire = document.getElementById("button-fire")
+let buttonWater = document.getElementById("button-water")
+let buttonEarth = document.getElementById("button-earth")
+let buttonRestart = document.getElementById("restart-button")
+
+
+let sectionChooseWarrior = document.getElementById("choose-warrior")
+let inputCadom = document.getElementById("cadom")
+let inputGentor = document.getElementById("gentor")
+let inputHaggis = document.getElementById("haggis")
+let spanWarriorPlayer = document.getElementById("warrior-player")
+
+
+let spanWarriorEnemy = document.getElementById("warrior-enemy")
+
+
 let playerAttack
 let enemyAttack
-let result
 let playerLives = 3
 let enemyLives = 3
-let finalResult
+
 
 function startGame() {
   //Elementos de HTML ocultos al inicio del juego
-  let sectionChooseAttack = document.getElementById("choose-attack")
+  
   sectionChooseAttack.style.display = "none"
-  let sectionRestartGame = document.getElementById("restart")
   sectionRestartGame.style.display = "none"
 
   //Elementos que se cargan al iniciar el juego
-  let buttonWarrior = document.getElementById("button-warrior")
   buttonWarrior.addEventListener("click", selectWarrior)
 
-  let buttonFire = document.getElementById("button-fire")
   buttonFire.addEventListener("click", fireAttack)
-  let buttonWater = document.getElementById("button-water")
   buttonWater.addEventListener("click", waterAttack)
-  let buttonEarth = document.getElementById("button-earth")
   buttonEarth.addEventListener("click", earthAttack)
-
-  let buttonRestart = document.getElementById("restart-button")
+  
   buttonRestart.addEventListener("click", restartGame)
 }
 
 // SELECCIÓN DEL GUERRERO DEL JUGADOR
 function selectWarrior() {
   // Elementos HTML que se ocultan o muestran
-  let sectionChooseAttack = document.getElementById("choose-attack")
-  sectionChooseAttack.style.display = "flex"
-  let sectionChooseWarrior = document.getElementById("choose-warrior")
   sectionChooseWarrior.style.display = "none"
-
-  let inputCadom = document.getElementById("cadom")
-  let inputGentor = document.getElementById("gentor")
-  let inputHaggis = document.getElementById("haggis")
-  let spanWarriorPlayer = document.getElementById("warrior-player")
+  sectionChooseAttack.style.display = "flex"
 
   if (inputCadom.checked) {
     spanWarriorPlayer.innerHTML = "Cadom"
@@ -48,6 +53,7 @@ function selectWarrior() {
     spanWarriorPlayer.innerHTML = "Haggis"
   } else {
     alert("You need to choose a warrior")
+    location.reload()
   }
 
   randomEnemyWarrior()
@@ -56,7 +62,6 @@ function selectWarrior() {
 // SELECCIÓN ALEATORIA GUERRERO DEL PC
 function randomEnemyWarrior() {
   let randomEnemy = aleatorio(1,3)
-  let spanWarriorEnemy = document.getElementById("warrior-enemy")
 
   if (randomEnemy == 1) {
     spanWarriorEnemy.innerHTML = "Cadom"
@@ -142,8 +147,8 @@ function createMessage(resultado) {
   let enemyNotification = document.createElement("p")
 
   sectionMessages.innerHTML = resultado
-  playerNotif.innerHTML = playerAttack
-  enemyNotif.innerHTML = enemyAttack
+  playerNotification.innerHTML = playerAttack
+  enemyNotification.innerHTML = enemyAttack
 
   playerNotif.appendChild(playerNotification)
   enemyNotif.appendChild(enemyNotification)
@@ -151,9 +156,6 @@ function createMessage(resultado) {
 
 function createFinalMessage(finalResult) {
   // Elementos HTML que se ocultan o muestran
-  let sectionRestartGame = document.getElementById("restart")
-  sectionRestartGame.style.display = "block"
-  
   let sectionMessages = document.getElementById("resultado")
 
   sectionMessages.innerHTML = finalResult
@@ -165,6 +167,9 @@ function createFinalMessage(finalResult) {
   buttonWater.disabled = true
   let buttonEarth = document.getElementById("button-earth")
   buttonEarth.disabled = true
+
+  let sectionRestartGame = document.getElementById("restart")
+  sectionRestartGame.style.display = "block"
 }
 
 // REINICIAR EL JUEGO

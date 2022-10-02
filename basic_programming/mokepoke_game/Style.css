@@ -6,7 +6,7 @@ body {
 
 .game {
   width: 450px;
-  height: 450px;
+  height: 550px;
   background-color: #F1EFDC;
   border-radius: 20px;
   margin: 80px auto;
@@ -139,9 +139,6 @@ input {
 .attack-buttons:hover {
   background-color: #E7C786;
 }
-.attack-buttons:active {
-  background-color: #F1EFDC;
-}
 
 #messages {
   width: 200px;
@@ -178,8 +175,14 @@ input {
 .stats {
   display: grid;
   grid-template-columns: 100px 100px;
-  justify-items: center;
   margin-top: 20px;
+}
+
+.pattack, .eattack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 7px;
 }
 
 @media (max-width: 360px) {
