@@ -69,15 +69,15 @@ function randomEnemyWarrior() {
 
 // SELECCIÓN DE ATAQE DEL JUGADOR
 function fireAttack() {
-  playerAttack = "FIRE"
+  playerAttack = "Fire"
   randomEnemyAttack()
 }
 function waterAttack() {
-  playerAttack = "WATER"
+  playerAttack = "Water"
   randomEnemyAttack()
 }
 function earthAttack() {
-  playerAttack = "EARTH"
+  playerAttack = "Earth"
   randomEnemyAttack()
 }
 
@@ -86,11 +86,11 @@ function randomEnemyAttack() {
   let randomAttack = aleatorio(1,3)
 
   if (randomAttack == 1) {
-    enemyAttack = "FIRE"
+    enemyAttack = "Fire"
   } else if (randomAttack == 2) {
-    enemyAttack = "WATER"
+    enemyAttack = "Water"
   } else {
-    enemyAttack = "EARTH"
+    enemyAttack = "Earth"
   }
 
   combat()
@@ -103,15 +103,15 @@ function combat() {
 
   if(playerAttack == enemyAttack) {
     createMessage("Tie 🧐")
-  } else if(playerAttack == "FIRE" && enemyAttack == "EARTH") {
+  } else if(playerAttack == "Fire" && enemyAttack == "Earth") {
     createMessage("You win! 🎊")
     enemyLives--
     spanEnemyLives.innerHTML = enemyLives
-  } else if(playerAttack == "WATER" && enemyAttack == "FIRE") {
+  } else if(playerAttack == "Water" && enemyAttack == "Fire") {
     createMessage("You win! 🎊")
     enemyLives--
     spanEnemyLives.innerHTML = enemyLives
-  } else if(playerAttack == "EARTH" && enemyAttack == "WATER") {
+  } else if(playerAttack == "Earth" && enemyAttack == "Water") {
     createMessage("You win! 🎊")
     enemyLives--
     spanEnemyLives.innerHTML = enemyLives
