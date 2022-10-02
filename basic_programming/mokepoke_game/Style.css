@@ -179,6 +179,7 @@ input {
   display: grid;
   grid-template-columns: 100px 100px;
   justify-items: center;
+  margin-top: 20px;
 }
 
 @media (max-width: 360px) {
