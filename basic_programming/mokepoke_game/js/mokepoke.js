@@ -1,21 +1,25 @@
-let sectionChooseAttack = document.getElementById("choose-attack")
-let sectionRestartGame = document.getElementById("restart")
-let buttonWarrior = document.getElementById("button-warrior")
-let buttonFire = document.getElementById("button-fire")
-let buttonWater = document.getElementById("button-water")
-let buttonEarth = document.getElementById("button-earth")
-let buttonRestart = document.getElementById("restart-button")
+const sectionChooseAttack = document.getElementById("choose-attack")
+const sectionRestartGame = document.getElementById("restart")
+const buttonWarrior = document.getElementById("button-warrior")
+const buttonFire = document.getElementById("button-fire")
+const buttonWater = document.getElementById("button-water")
+const buttonEarth = document.getElementById("button-earth")
+const buttonRestart = document.getElementById("restart-button")
 
+const sectionChooseWarrior = document.getElementById("choose-warrior")
+const inputCadom = document.getElementById("cadom")
+const inputGentor = document.getElementById("gentor")
+const inputHaggis = document.getElementById("haggis")
+const spanWarriorPlayer = document.getElementById("warrior-player")
 
-let sectionChooseWarrior = document.getElementById("choose-warrior")
-let inputCadom = document.getElementById("cadom")
-let inputGentor = document.getElementById("gentor")
-let inputHaggis = document.getElementById("haggis")
-let spanWarriorPlayer = document.getElementById("warrior-player")
+const spanWarriorEnemy = document.getElementById("warrior-enemy")
 
+const spanPlayerLives = document.getElementById("player-lives")
+const spanEnemyLives = document.getElementById("enemy-lives")
 
-let spanWarriorEnemy = document.getElementById("warrior-enemy")
-
+const sectionMessages = document.getElementById("resultado")
+const playerNotif = document.getElementById("playerattack")
+const enemyNotif = document.getElementById("enemyattack")
 
 let playerAttack
 let enemyAttack
@@ -103,9 +107,6 @@ function randomEnemyAttack() {
 
 // COMBATE
 function combat() {
-  let spanPlayerLives = document.getElementById("player-lives")
-  let spanEnemyLives = document.getElementById("enemy-lives")
-
   if(playerAttack == enemyAttack) {
     createMessage("Tie 🧐")
   } else if(playerAttack == "Fire" && enemyAttack == "Earth") {
@@ -139,10 +140,6 @@ function checkLives() {
 }
 
 function createMessage(resultado) {
-  let sectionMessages = document.getElementById("resultado")
-  let playerNotif = document.getElementById("playerattack")
-  let enemyNotif = document.getElementById("enemyattack")
-
   let playerNotification = document.createElement("p")
   let enemyNotification = document.createElement("p")
 
@@ -156,19 +153,13 @@ function createMessage(resultado) {
 
 function createFinalMessage(finalResult) {
   // Elementos HTML que se ocultan o muestran
-  let sectionMessages = document.getElementById("resultado")
-
   sectionMessages.innerHTML = finalResult
 
   // DESHABILITAR BOTONES
-  let buttonFire = document.getElementById("button-fire")
   buttonFire.disabled = true
-  let buttonWater = document.getElementById("button-water")
   buttonWater.disabled = true
-  let buttonEarth = document.getElementById("button-earth")
   buttonEarth.disabled = true
-
-  let sectionRestartGame = document.getElementById("restart")
+  
   sectionRestartGame.style.display = "block"
 }
 
