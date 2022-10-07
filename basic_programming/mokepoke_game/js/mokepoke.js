@@ -21,13 +21,13 @@ const sectionMessages = document.getElementById("resultado")
 const playerNotif = document.getElementById("playerattack")
 const enemyNotif = document.getElementById("enemyattack")
 
+let mokepokes = []
 let playerAttack
 let enemyAttack
 let playerLives = 3
 let enemyLives = 3
 
 // Clases para crear objetos
-
 class Mokepoke {
   constructor(name, picture, life) {
     this.name = name
@@ -39,6 +39,8 @@ class Mokepoke {
 let cadom = new Mokepoke("Cadom", "./img/warrior1.png", 5)
 let gentor = new Mokepoke("Gentor", "./img/Warrior2.png", 5)
 let haggis = new Mokepoke("Haggis", "./img/warrior.png", 5)
+
+mokepokes.push(cadom, gentor, haggis)
 
 
 function startGame() {
