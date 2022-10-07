@@ -33,6 +33,7 @@ class Mokepoke {
     this.name = name
     this.picture = picture
     this.life = life
+    this.attacks = []
   }
 }
 
@@ -40,7 +41,29 @@ let cadom = new Mokepoke("Cadom", "./img/warrior1.png", 5)
 let gentor = new Mokepoke("Gentor", "./img/Warrior2.png", 5)
 let haggis = new Mokepoke("Haggis", "./img/warrior.png", 5)
 
-mokepokes.push(cadom, gentor, haggis)
+cadom.attacks.push(
+  {nombre: "💧", id: "button-water"},
+  {nombre: "💧", id: "button-water"},
+  {nombre: "💧", id: "button-water"},
+  {nombre: "🔥", id: "button-fire"},
+  {nombre: "⛰️", id: "button-earth"},
+)
+
+gentor.attacks.push(
+  {nombre: "⛰️", id: "button-water"},
+  {nombre: "⛰️", id: "button-water"},
+  {nombre: "⛰️", id: "button-water"},
+  {nombre: "🔥", id: "button-fire"},
+  {nombre: "💧", id: "button-earth"},
+)
+
+haggis.attacks.push(
+  {nombre: "🔥", id: "button-water"},
+  {nombre: "🔥", id: "button-water"},
+  {nombre: "🔥", id: "button-water"},
+  {nombre: "💧", id: "button-fire"},
+  {nombre: "⛰️", id: "button-earth"},
+)
 
 
 function startGame() {
