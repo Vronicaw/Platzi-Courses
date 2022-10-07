@@ -26,6 +26,20 @@ let enemyAttack
 let playerLives = 3
 let enemyLives = 3
 
+// Clases para crear objetos
+
+class Mokepoke {
+  constructor(name, picture, life) {
+    this.name = name
+    this.picture = picture
+    this.life = life
+  }
+}
+
+let cadom = new Mokepoke("Cadom", "./img/warrior1.png", 5)
+let gentor = new Mokepoke("Gentor", "./img/Warrior2.png", 5)
+let haggis = new Mokepoke("Haggis", "./img/warrior.png", 5)
+
 
 function startGame() {
   //Elementos de HTML ocultos al inicio del juego
