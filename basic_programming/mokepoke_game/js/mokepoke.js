@@ -7,9 +7,7 @@ const buttonEarth = document.getElementById("button-earth")
 const buttonRestart = document.getElementById("restart-button")
 
 const sectionChooseWarrior = document.getElementById("choose-warrior")
-const inputCadom = document.getElementById("cadom")
-const inputGentor = document.getElementById("gentor")
-const inputHaggis = document.getElementById("haggis")
+
 const spanWarriorPlayer = document.getElementById("warrior-player")
 
 const spanWarriorEnemy = document.getElementById("warrior-enemy")
@@ -26,6 +24,9 @@ let mokepokes = []
 let playerAttack
 let enemyAttack
 let mokepokeOption
+let inputCadom
+let inputGentor
+let inputHaggis
 let playerLives = 3
 let enemyLives = 3
 
@@ -85,6 +86,11 @@ function startGame() {
           </label>
     `
     cardsContainer.innerHTML += mokepokeOption
+
+    inputCadom = document.getElementById("Cadom")
+    inputGentor = document.getElementById("Gentor")
+    inputHaggis = document.getElementById("Haggis")
+
   })
 
   //Elementos que se cargan al iniciar el juego
