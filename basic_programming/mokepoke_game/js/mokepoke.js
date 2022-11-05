@@ -90,7 +90,6 @@ function startGame() {
     inputCadom = document.getElementById("Cadom")
     inputGentor = document.getElementById("Gentor")
     inputHaggis = document.getElementById("Haggis")
-
   })
 
   //Elementos que se cargan al iniciar el juego
@@ -110,11 +109,11 @@ function selectWarrior() {
   sectionChooseAttack.style.display = "flex"
 
   if (inputCadom.checked) {
-    spanWarriorPlayer.innerHTML = "Cadom"
+    spanWarriorPlayer.innerHTML = inputCadom.id
   } else if (inputGentor.checked) {
-    spanWarriorPlayer.innerHTML = "Gentor"
+    spanWarriorPlayer.innerHTML = inputGentor.id
   } else if (inputHaggis.checked) {
-    spanWarriorPlayer.innerHTML = "Haggis"
+    spanWarriorPlayer.innerHTML = inputHaggis.id
   } else {
     alert("You need to choose a warrior")
     location.reload()
