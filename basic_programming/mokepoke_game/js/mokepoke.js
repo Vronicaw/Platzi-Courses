@@ -20,10 +20,12 @@ const spanEnemyLives = document.getElementById("enemy-lives")
 const sectionMessages = document.getElementById("resultado")
 const playerNotif = document.getElementById("playerattack")
 const enemyNotif = document.getElementById("enemyattack")
+const cardsContainer = document.getElementById("cardsContainer")
 
 let mokepokes = []
 let playerAttack
 let enemyAttack
+let mokepokeOption
 let playerLives = 3
 let enemyLives = 3
 
@@ -75,8 +77,13 @@ function startGame() {
   sectionRestartGame.style.display = "none"
 
   mokepokes.forEach((Mokepoke) => {
-    console.log(Mokepoke.name)
-
+    mokepokeOption = `
+    <input type="radio" name="warriors" id=${Mokepoke.nombre} />
+          <label for=${Mokepoke.nombre} class="mokepoke-card">
+            <p>${Mokepoke.nombre}</p>
+            <img class=${Mokepoke.picture} alt=${Mokepoke.nombre}>
+          </label>
+    `
   })
 
   //Elementos que se cargan al iniciar el juego
