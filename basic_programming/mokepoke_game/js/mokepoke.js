@@ -65,12 +65,19 @@ haggis.attacks.push(
   {nombre: "⛰️", id: "button-earth"},
 )
 
+mokepokes.push(cadom,gentor,haggis)
+
 
 function startGame() {
   //Elementos de HTML ocultos al inicio del juego
   
   sectionChooseAttack.style.display = "none"
   sectionRestartGame.style.display = "none"
+
+  mokepokes.forEach((Mokepoke) => {
+    console.log(Mokepoke.name)
+
+  })
 
   //Elementos que se cargan al iniciar el juego
   buttonWarrior.addEventListener("click", selectWarrior)
