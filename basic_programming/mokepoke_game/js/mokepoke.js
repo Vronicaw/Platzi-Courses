@@ -78,12 +78,13 @@ function startGame() {
 
   mokepokes.forEach((Mokepoke) => {
     mokepokeOption = `
-    <input type="radio" name="warriors" id=${Mokepoke.nombre} />
-          <label for=${Mokepoke.nombre} class="mokepoke-card">
-            <p>${Mokepoke.nombre}</p>
-            <img class=${Mokepoke.picture} alt=${Mokepoke.nombre}>
+    <input type="radio" name="warriors" id=${Mokepoke.name} />
+          <label for=${Mokepoke.name} class="mokepoke-card">
+            <p>${Mokepoke.name}</p>
+            <img src=${Mokepoke.picture} alt=${Mokepoke.name}>
           </label>
     `
+    cardsContainer.innerHTML += mokepokeOption
   })
 
   //Elementos que se cargan al iniciar el juego
