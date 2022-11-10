@@ -122,9 +122,9 @@ function selectWarrior() {
 
 // SELECCIÓN ALEATORIA GUERRERO DEL PC
 function randomEnemyWarrior() {
-  let randomEnemy = aleatorio(0,mokepokes.length -1)
+  let randomEnemy = aleatorio(0, mokepokes.length -1)
 
-  spanWarriorEnemy = mokepokes[randomEnemy]
+  spanWarriorEnemy.innerHTML = mokepokes[randomEnemy].name
 }
 
 // SELECCIÓN DE ATAQE DEL JUGADOR
