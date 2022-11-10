@@ -124,13 +124,7 @@ function selectWarrior() {
 function randomEnemyWarrior() {
   let randomEnemy = aleatorio(0,mokepokes.length -1)
 
-  if (randomEnemy == 1) {
-    spanWarriorEnemy.innerHTML = "Cadom"
-  } else if (randomEnemy == 2) {
-    spanWarriorEnemy.innerHTML = "Gentor"
-  } else {
-    spanWarriorEnemy.innerHTML = "Haggis"
-  }
+  spanWarriorEnemy = mokepokes[randomEnemy]
 }
 
 // SELECCIÓN DE ATAQE DEL JUGADOR
