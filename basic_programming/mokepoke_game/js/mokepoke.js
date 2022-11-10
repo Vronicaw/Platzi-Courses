@@ -1,9 +1,6 @@
 const sectionChooseAttack = document.getElementById("choose-attack")
 const sectionRestartGame = document.getElementById("restart")
 const buttonWarrior = document.getElementById("button-warrior")
-const buttonFire = document.getElementById("button-fire")
-const buttonWater = document.getElementById("button-water")
-const buttonEarth = document.getElementById("button-earth")
 const buttonRestart = document.getElementById("restart-button")
 
 const sectionChooseWarrior = document.getElementById("choose-warrior")
@@ -17,6 +14,7 @@ const sectionMessages = document.getElementById("resultado")
 const playerNotif = document.getElementById("playerattack")
 const enemyNotif = document.getElementById("enemyattack")
 const cardsContainer = document.getElementById("cardsContainer")
+const attackContainer = document.getElementById("attackContainer")
 
 let mokepokes = []
 let playerAttack
@@ -26,6 +24,10 @@ let inputCadom
 let inputGentor
 let inputHaggis
 let warriorPlayer
+let mokepokeAttacks
+let buttonFire
+let buttonWater
+let buttonEarth
 let playerLives = 3
 let enemyLives = 3
 
@@ -44,27 +46,27 @@ let gentor = new Mokepoke("Gentor", "./img/Warrior2.png", 5)
 let haggis = new Mokepoke("Haggis", "./img/warrior.png", 5)
 
 cadom.attacks.push(
-  {nombre: "💧", id: "button-water"},
-  {nombre: "💧", id: "button-water"},
-  {nombre: "💧", id: "button-water"},
-  {nombre: "🔥", id: "button-fire"},
-  {nombre: "⛰️", id: "button-earth"},
+  {nombre: "💧", id: "water"},
+  {nombre: "💧", id: "water"},
+  {nombre: "💧", id: "water"},
+  {nombre: "🔥", id: "fire"},
+  {nombre: "⛰️", id: "earth"},
 )
 
 gentor.attacks.push(
-  {nombre: "⛰️", id: "button-water"},
-  {nombre: "⛰️", id: "button-water"},
-  {nombre: "⛰️", id: "button-water"},
-  {nombre: "🔥", id: "button-fire"},
-  {nombre: "💧", id: "button-earth"},
+  {nombre: "⛰️", id: "earth"},
+  {nombre: "⛰️", id: "earth"},
+  {nombre: "⛰️", id: "earth"},
+  {nombre: "🔥", id: "fire"},
+  {nombre: "💧", id: "water"},
 )
 
 haggis.attacks.push(
-  {nombre: "🔥", id: "button-water"},
-  {nombre: "🔥", id: "button-water"},
-  {nombre: "🔥", id: "button-water"},
-  {nombre: "💧", id: "button-fire"},
-  {nombre: "⛰️", id: "button-earth"},
+  {nombre: "🔥", id: "fire"},
+  {nombre: "🔥", id: "fire"},
+  {nombre: "🔥", id: "fire"},
+  {nombre: "💧", id: "water"},
+  {nombre: "⛰️", id: "earth"},
 )
 
 mokepokes.push(cadom,gentor,haggis)
@@ -93,10 +95,6 @@ function startGame() {
 
   //Elementos que se cargan al iniciar el juego
   buttonWarrior.addEventListener("click", selectWarrior)
-
-  buttonFire.addEventListener("click", fireAttack)
-  buttonWater.addEventListener("click", waterAttack)
-  buttonEarth.addEventListener("click", earthAttack)
   
   buttonRestart.addEventListener("click", restartGame)
 }
@@ -132,7 +130,24 @@ function extractAttacks(warriorPlayer) {
       attacks = mokepokes[i].attacks
     }
   }
-  console.log(attacks)
+  showAttacks(attacks)
+}
+
+function showAttacks(attacks) {
+  attacks.forEach((attack) => {
+    mokepokeAttacks = `
+    <button id=${attack.nombre} class="attack-buttons">${attack.nombre}</button>
+    `
+    attackContainer.innerHTML += mokepokeAttacks
+  })
+
+  buttonFire = document.getElementById("🔥")
+  buttonWater = document.getElementById("💧")
+  buttonEarth = document.getElementById("⛰️")
+
+  buttonFire.addEventListener("click", fireAttack)
+  buttonWater.addEventListener("click", waterAttack)
+  buttonEarth.addEventListener("click", earthAttack)
 }
 
 
