@@ -9,9 +9,7 @@ const buttonRestart = document.getElementById("restart-button")
 const sectionChooseWarrior = document.getElementById("choose-warrior")
 
 const spanWarriorPlayer = document.getElementById("warrior-player")
-
 const spanWarriorEnemy = document.getElementById("warrior-enemy")
-
 const spanPlayerLives = document.getElementById("player-lives")
 const spanEnemyLives = document.getElementById("enemy-lives")
 
@@ -124,7 +122,7 @@ function selectWarrior() {
 
 // SELECCIÓN ALEATORIA GUERRERO DEL PC
 function randomEnemyWarrior() {
-  let randomEnemy = aleatorio(1,3)
+  let randomEnemy = aleatorio(0,mokepokes.length -1)
 
   if (randomEnemy == 1) {
     spanWarriorEnemy.innerHTML = "Cadom"
