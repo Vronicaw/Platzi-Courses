@@ -25,6 +25,7 @@ let mokepokeOption
 let inputCadom
 let inputGentor
 let inputHaggis
+let warriorPlayer
 let playerLives = 3
 let enemyLives = 3
 
@@ -108,17 +109,32 @@ function selectWarrior() {
 
   if (inputCadom.checked) {
     spanWarriorPlayer.innerHTML = inputCadom.id
+    warriorPlayer = inputCadom.id
   } else if (inputGentor.checked) {
     spanWarriorPlayer.innerHTML = inputGentor.id
+    warriorPlayer = inputGentor.id
   } else if (inputHaggis.checked) {
     spanWarriorPlayer.innerHTML = inputHaggis.id
+    warriorPlayer = inputHaggis.id
   } else {
     alert("You need to choose a warrior")
     location.reload()
   }
 
+  extractAttacks(warriorPlayer)
   randomEnemyWarrior()
 }
+
+function extractAttacks(warriorPlayer) {
+  let attacks
+  for (let i = 0; i < mokepokes.length; i++) {
+    if (warriorPlayer === mokepokes[i].name) {
+      attacks = mokepokes[i].attacks
+    }
+  }
+  console.log(attacks)
+}
+
 
 // SELECCIÓN ALEATORIA GUERRERO DEL PC
 function randomEnemyWarrior() {
