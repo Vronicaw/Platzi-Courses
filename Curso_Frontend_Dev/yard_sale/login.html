@@ -45,6 +45,11 @@
       display: flex;
       flex-direction: column;
     }
+    .form div {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+    }
     .label {
       font-size: var(--sm);
       font-weight: bold;
@@ -97,8 +102,13 @@
       .logo {
         display: block;
       }
-      .secondary-button {
-        margin-top: 80px;
+      .form-container {
+        height: 100%;
+        justify-content: space-between;
+      }
+      .form {
+        height: 100%;
+        justify-content: space-between;
       }
     }
     .primary-button:hover {
@@ -112,14 +122,16 @@
       <img src="./YardSale_Logos/logo_yard_sale.svg" alt="logo" class="logo">
 
       <form action="" class="form">
-        <label for="email" class="label">Email address</label>
-        <input type="text" id="email" placeholder="email@example.com" class="input input-email">
+        <div>
+          <label for="email" class="label">Email address</label>
+          <input type="text" id="email" placeholder="email@example.com" class="input input-email">
 
-        <label for="password" class="label">Password</label>
-        <input type="password" id="new-password" placeholder="********" class="input input-password">
+          <label for="password" class="label">Password</label>
+          <input type="password" id="new-password" placeholder="********" class="input input-password">
 
-        <input type="submit" value="Login" class="primary-button login-button">
-        <a href="">Forgot my password</a>
+          <input type="submit" value="Login" class="primary-button login-button">
+          <a href="">Forgot my password</a>
+        </div> 
       </form>
 
       <button class="secondary-button signup-button">Sign up</button>
