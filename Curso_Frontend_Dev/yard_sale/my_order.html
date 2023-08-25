@@ -24,18 +24,113 @@
       font-family: 'Press Start 2P', cursive;
       font-family: 'Quicksand', sans-serif;
     }
+    .my-order {
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    .title {
+      font-size: var(--lg);
+      margin-bottom: 40px;
+    }
+    .my-order-container {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      width: 300px;
+    }
+    .my-order-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .order-info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+      background-color: var(--text-input-field);
+      margin-bottom: 24px;
+      border-radius: 8px;
+      padding: 0 24px;
+    }
+    .order-info p:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+    }
+    .order-info p span:nth-child(1) {
+      font-size: var(--md);
+      font-weight: bold;
+    }
+    .order-info p span:nth-child(2) {
+      font-size: var(--sm);
+      color: var(--very-light-pink);
+    }
+    .order-info p:nth-child(2) {
+      text-align: end;
+      font-weight: bold;
+    }
+    .shopping-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      gap: 16px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .shopping-card figure {
+      margin: 0;
+    }
+    .shopping-card figure img {
+      width: 70px;
+      height: 70px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+    .shopping-card p:nth-child(2) {
+      color: var(--very-light-pink);
+    }
+    .shopping-card p:nth-child(3) {
+      font-size: var(--md);
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <div class="my-order">
+
     <div class="my-order-container">
-      <div class="content">
-        <p>
-          <span>08.24.23</span>
-          <span>6 articles</span>
-        </p>
-        <p>$560.00</p>
+      <h1 class="title">My order</h1>
+
+      <div class="my-order-content">
+        <div class="order-info">
+          <p>
+            <span>08.24.23</span>
+            <span>6 articles</span>
+          </p>
+          <p>$560,00</p>
+        </div>
+        <div class="shopping-card">
+          <figure>
+            <img src="https://images.pexels.com/photos/11016862/pexels-photo-11016862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Flowers">
+          </figure>
+          <p>Flowers</p>
+          <p>$30,00</p>
+        </div>
+        <div class="shopping-card">
+          <figure>
+            <img src="https://images.pexels.com/photos/11016862/pexels-photo-11016862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Flowers">
+          </figure>
+          <p>Flowers</p>
+          <p>$30,00</p>
+        </div>
+        <div class="shopping-card">
+          <figure>
+            <img src="https://images.pexels.com/photos/11016862/pexels-photo-11016862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Flowers">
+          </figure>
+          <p>Flowers</p>
+          <p>$30,00</p>
+        </div>
       </div>
+
     </div>
   </div>
 </body>
