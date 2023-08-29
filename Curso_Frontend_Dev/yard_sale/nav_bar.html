@@ -24,14 +24,71 @@
       font-family: 'Press Start 2P', cursive;
       font-family: 'Quicksand', sans-serif;
     }
+    .menu {
+      display: none;
+    }
+    .logo {
+      width: 100px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+    .navbar-left {
+      display: flex;
+    }
+    .navbar-left ul {
+      margin-left: 12px;
+    }
+    .navbar-left ul,
+    .navbar-right ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      height: 60px;
+    }
+    .navbar-left ul li a,
+    .navbar-right ul li a {
+      text-decoration: none;
+      color: var(--very-light-pink);
+      border: 1px solid var(--white);
+      padding: 8px;
+      border-radius: 8px;
+    }
+    .navbar-left ul li a:hover,
+    .navbar-right ul li a:hover {
+      color: var(--hospital-green);
+      border: 1px solid var(--hospital-green);
+    }
+    .navbar-email {
+      color: var(--very-light-pink);
+      font-size: var(--sm);
+    }
+    .navbar-shopping-cart {
+      position: relative;
+    }
+    .navbar-shopping-cart div {
+      width: 12px;
+      height: 12px;
+      background-color: var(--hospital-green);
+      border-radius: 50%;
+      font-size: var(--sm);
+      font-weight: bold;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+    }
   </style>
 </head>
 <body>
   <nav>
-    <img src="./YardSale_Icons/icon_menu.svg" alt="">
+    <img src="./YardSale_Icons/icon_menu.svg" alt="menu" class="menu">
 
     <div class="navbar-left">
-      <img src="./YardSale_Logos/favicon_yard_sale.svg" alt="logo" class="logo">
+      <img src="./YardSale_Logos/logo_yard_sale.svg" alt="logo" class="logo">
 
       <ul>
         <li>
@@ -57,7 +114,7 @@
 
     <div class="navbar-right">
       <ul>
-        <li>yard_sale@example.com</li>
+        <li class="navbar-email">yard_sale@example.com</li>
         <li class="navbar-shopping-cart">
           <img src="./YardSale_Icons/icon_shopping_cart.svg" alt="shopping cart">
           <div>4</div>
