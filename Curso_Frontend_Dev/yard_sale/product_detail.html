@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Product Details</title>
+  <style>
+    :root {
+      --white: #FFFFFF;
+      --black: #000000;
+      --dark: #232830;
+      --very-light-pink: #C7C7C7;
+      --text-input-field: #F7F7F7;
+      --hospital-green: #ACD9B2;
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+    }
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      font-family: 'Quicksand', sans-serif;
+    }
+    .primary-button {
+      background-color: var(--hospital-green);
+      border-radius: 8px;
+      border: none;
+      color: var(--white);
+      width: 100%;
+      cursor: pointer;
+      font-size: var(--md);
+      font-weight: bold;
+      height: 50px;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+    .add-to-cart-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-detail {
+      width: 360px;
+      padding-bottom: 24px;
+      position: absolute;
+      right: 0;
+    }
+    .close {
+      background-color: var(--white);
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 10px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .close:hover {
+      cursor: pointer;
+    }
+    .product-detail > img:nth-child(2) {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 0 0 20px 20px;
+    }
+    .product-info {
+      margin: 24px 24px 0 24px;
+    }
+    .product-info p:nth-child(1) {
+      font-weight: bold;
+      font-size: var(--md);
+      margin-top: 0;
+      margin-bottom: 4px;
+    }
+    .product-info p:nth-child(2) {
+      font-size: var(--md);
+      margin-top: 0;
+      margin-bottom: 36px;
+      color: var(--very-light-pink);
+    }
+    .product-info p:nth-child(3) {
+      font-size: var(--sm);
+      margin-top: 0;
+      margin-bottom: 36px;
+      color: var(--very-light-pink);
+      text-align: justify;
+    }
+    @media (max-width: 640px) {
+      .product-detail {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside class="product-detail">
+    <div class="close">
+      <img src="./YardSale_Icons/icon_close.png" alt="">
+    </div>
+    <img src="https://images.pexels.com/photos/11016862/pexels-photo-11016862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Flowers">
+    <div class="product-info">
+      <p>$15</p>
+      <p>Flowers</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptatum alias excepturi optio quibusdam temporibus voluptatibus, sit perspiciatis cumque ducimus facere labore nobis sapiente dolorum aut eaque in ea fugiat.</p>
+      <button class="primary-button add-to-cart-button">
+        <img src="./YardSale_Icons/bt_add_to_cart.svg" alt="add to cart">
+        Add to cart
+      </button>
+    </div>
+  </aside>
+</body>
+</html>
